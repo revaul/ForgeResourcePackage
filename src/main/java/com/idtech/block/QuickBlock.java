@@ -222,12 +222,12 @@ public class QuickBlock extends Block {
 	 
 	
 	
-	@Override
+	/*@Override
 	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
 		AxisAlignedBB box = super.getCollisionBoundingBox(blockState, worldIn, pos);
 		AxisAlignedBB slightlySmaller = new AxisAlignedBB(box.minX + .1, box.minY + .1, box.minZ + .1, box.maxX - .1, box.maxY - .1, box.maxZ - .1);
 		return slightlySmaller;
-	}
+	} */
 	
 	
 
@@ -291,6 +291,12 @@ public class QuickBlock extends Block {
 	protected void spawnItem(Item toSpawn){
 		world.spawnEntity(new EntityItem(world, pos.getX(), pos.getY()+1, pos.getZ(), new ItemStack(toSpawn)));
 		
+	}
+	protected void createExplosion(Entity player, BlockPos block, float size, boolean destroysBlocks) {
+		if (block == null)
+			return;
+		if (!world.isRemote)
+			world.createExplosion(player, block.getX(), block.getY(), block.getZ(), size, destroysBlocks);
 	}
 	
 	protected void spawnParticles(EnumParticleTypes type, int intensity){

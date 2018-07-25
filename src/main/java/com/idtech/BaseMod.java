@@ -1,6 +1,7 @@
 package com.idtech;
 
 import com.idtech.block.QuickBlock;
+import com.idtech.entity.EntityMod;
 import com.idtech.item.ItemMod;
 import com.idtech.item.QuickItem;
 import com.idtech.proxy.CommonProxy;
@@ -46,7 +47,7 @@ public class BaseMod
 	public void preInit(FMLPreInitializationEvent event)
 	{
 
-		
+		EntityMod.preInit();
 		// Mod PreInit
 		ItemMod.preInit();
 		QuickItem.preInit();
@@ -59,7 +60,7 @@ public class BaseMod
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
-
+EntityMod.init();
 		// Mod Init
 		ItemMod.init();
 		QuickItem.init();

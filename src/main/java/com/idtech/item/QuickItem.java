@@ -134,6 +134,7 @@ public class QuickItem extends Item {
 	 * This method is called each time the item is right clicked. Prior to being
 	 * called, player, world, and hand are all updated.
 	 */
+	
 	protected void onRightClick() {
 	}
 

@@ -2,14 +2,23 @@ package com.idtech.world;
  
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
  
 public class WorldMod {
      
+	 public static BiomeCustom biomeCustom;
+	
     public static void init(){
-
+    	BiomeProperties properties = new BiomeProperties("Custom");
+    	properties.setBaseHeight(1.5F);
+        properties.setHeightVariation(0.025F);
+        properties.setTemperature(2.0F);
+        properties.setWaterColor(0x11FF11);
+        biomeCustom = new BiomeCustom(properties);
+        registerModBiome(biomeCustom, 500, BiomeType.WARM);
     }
     
     // Biome ID finder
