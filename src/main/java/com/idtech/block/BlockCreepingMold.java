@@ -1,5 +1,6 @@
 package com.idtech.block;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 
 public class BlockCreepingMold extends QuickBlock {
@@ -10,7 +11,11 @@ public class BlockCreepingMold extends QuickBlock {
 	}
 	 public void onRandomTick(){
 	        BlockPos neighbor = findNeighborBlock();
-	        cloneAt(neighbor);
+	        
+	        if (world.getBlockState(neighbor) == Blocks.AIR.getDefaultState()){
+	            cloneAt(neighbor);
+	        }
+	       
 	   }
 	 
 }

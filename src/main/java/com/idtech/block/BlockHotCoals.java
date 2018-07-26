@@ -11,4 +11,7 @@ public class BlockHotCoals extends QuickBlock {
 		setHardness(10);
 		setLightLevel(0.5f);
 	}
+	public void onEntityWalk() {
+	    entity.setFire(3);
+	}
 }

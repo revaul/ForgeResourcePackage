@@ -6,10 +6,13 @@ import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
+import net.minecraftforge.fml.common.registry.GameRegistry;
  
 public class WorldMod {
      
 	 public static BiomeCustom biomeCustom;
+
+	    public static WorldGeneratorOre worldGen;
 	
     public static void init(){
     	BiomeProperties properties = new BiomeProperties("Custom");
@@ -19,6 +22,9 @@ public class WorldMod {
         properties.setWaterColor(0x11FF11);
         biomeCustom = new BiomeCustom(properties);
         registerModBiome(biomeCustom, 500, BiomeType.WARM);
+        
+        worldGen = new WorldGeneratorOre();
+        GameRegistry.registerWorldGenerator(worldGen, 10);
     }
     
     // Biome ID finder

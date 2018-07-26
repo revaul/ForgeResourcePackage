@@ -31,6 +31,9 @@ public class ItemMod {
 	public static ItemCustomArmor customChest;
 	public static ItemCustomArmor customFeet;
 	public static ArmorMaterial customArmorMaterial;
+	
+	//Food
+	public static ItemDeliciousFood itemDeliciousFood;
 
 	public static void preInit() {
 
@@ -70,6 +73,11 @@ public class ItemMod {
 
 		customFeet = new ItemCustomArmor(ItemMod.customArmorMaterial, 0, EntityEquipmentSlot.FEET, "CustomFeet");
 		GameRegistry.register(customFeet.setRegistryName(customFeet.name));
+	
+		//Food
+		   itemDeliciousFood = new ItemDeliciousFood(8,0.6f, false);
+		   GameRegistry.register(itemDeliciousFood.setRegistryName(itemDeliciousFood.name));
+		
 	}
 
 	public static void init() {
@@ -89,5 +97,8 @@ public class ItemMod {
 		BaseMod.proxy.registerItemInventoryRender(customLegs, customLegs.name);
 		BaseMod.proxy.registerItemInventoryRender(customChest, customChest.name);
 		BaseMod.proxy.registerItemInventoryRender(customFeet, customFeet.name);
+	
+		//Food
+		 BaseMod.proxy.registerItemInventoryRender(itemDeliciousFood, itemDeliciousFood.name);
 	}
 }

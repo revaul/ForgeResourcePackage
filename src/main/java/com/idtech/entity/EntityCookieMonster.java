@@ -1,12 +1,13 @@
 package com.idtech.entity;
 
-	import net.minecraft.entity.SharedMonsterAttributes;
+	import com.idtech.item.ItemMod;
+import com.idtech.item.QuickItem;
+
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
-import net.minecraft.entity.ai.EntityAIFollowOwner;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
-import net.minecraft.entity.ai.EntityAIOwnerHurtTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.ai.EntityAIWander;
@@ -18,6 +19,20 @@ import net.minecraft.world.World;
 	 
 	public class EntityCookieMonster extends EntityMob {
 
+		@Override
+		public void dropFewItems(boolean recentlyHit, int lootLevel) {
+	        int quantity = this.rand.nextInt(4) + 1;
+	 
+	        for (int i = 0; i < quantity; i++) {
+	            if (this.isBurning()) {
+	                this.dropItem(QuickItem.getItem("Lightnight Hammer"), 1);
+	            }
+	            else {
+	                this.dropItem(Items.DIAMOND, 1);
+	            }
+	        }
+	 
+	    }
 		public EntityCookieMonster(World worldIn) {
 			super(worldIn);
 			// TODO Auto-generated constructor stub
