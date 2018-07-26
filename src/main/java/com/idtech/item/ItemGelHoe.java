@@ -3,13 +3,13 @@ package com.idtech.item;
 import com.idtech.BaseMod;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemHoe;
 
-public class ItemGelAxe extends ItemAxe {
+public class ItemGelHoe extends ItemHoe {
 
-	public static final String name = "GelAxe";
+	public static final String name = "GelHoe";
 	
-	protected ItemGelAxe() {
+	protected ItemGelHoe() {
 		super(ItemMod.GEL);
 		// TODO Auto-generated constructor stub
 		this.setUnlocalizedName(BaseMod.MODID + "_" + name);

@@ -12,7 +12,7 @@ public class ItemMod {
 	public static ToolMaterial GEL;
 
 	// Tools
-	public static ItemGelAxe itemGelAxe;
+	public static ItemGelHoe itemGelHoe;
 	public static ItemGelPickaxe itemGelPickaxe;
 	public static ItemGelSpade itemGelSpade;
 	public static ItemGelSword itemGelSword;
@@ -31,13 +31,13 @@ public class ItemMod {
 		itemWaterGun = new ItemWaterGun("WaterGun");
 		
 		// Tools
-		 itemGelAxe = new ItemGelAxe();
+		 itemGelHoe = new ItemGelHoe();
 		 itemGelPickaxe = new ItemGelPickaxe();
 		 itemGelSpade = new ItemGelSpade();
 		 itemGelSword = new ItemGelSword();
 		 
 		 //Registers
-		 GameRegistry.register(itemGelAxe.setRegistryName(itemGelAxe.name));
+		 GameRegistry.register(itemGelHoe.setRegistryName(itemGelHoe.name));
 	        GameRegistry.register(itemGelPickaxe.setRegistryName(itemGelPickaxe.name));
 	        GameRegistry.register(itemGelSpade.setRegistryName(itemGelSpade.name));
 	        GameRegistry.register(itemGelSword.setRegistryName(itemGelSword.name));
@@ -50,7 +50,7 @@ public class ItemMod {
 	public static void init(){
 
 		// Items
-		BaseMod.proxy.registerItemInventoryRender(itemGelAxe, itemGelAxe.name);
+		BaseMod.proxy.registerItemInventoryRender(itemGelHoe, itemGelHoe.name);
 		 BaseMod.proxy.registerItemInventoryRender(itemGelPickaxe, itemGelPickaxe.name);
 		 BaseMod.proxy.registerItemInventoryRender(itemGelSpade, itemGelSpade.name);
 		 BaseMod.proxy.registerItemInventoryRender(itemGelSword, itemGelSword.name);
